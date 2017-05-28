@@ -12,7 +12,7 @@
   "engines": {
     "node": "7.6.0",
     "npm": "4.3.0",
-    "yarn": "0.20.3"
+    "yarn": "0.24.5"
   },
   "scripts": {
     "develop": "nodemon --trace-warnings index.js",
