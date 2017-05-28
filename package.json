@@ -22,27 +22,27 @@
   },
   "dependencies": {
     "bluebird": "3.5.0",
-    "body-parser": "1.17.0",
+    "body-parser": "1.17.2",
     "cheerio": "0.22.0",
-    "cookie-session": "2.0.0-beta.1",
-    "cors": "2.8.1",
+    "cookie-session": "2.0.0-beta.2",
+    "cors": "2.8.3",
     "dateformat": "2.0.0",
     "dotenv": "4.0.0",
-    "express": "4.15.0",
-    "google-libphonenumber": "2.0.11",
+    "express": "4.15.3",
+    "google-libphonenumber": "2.0.15",
     "lodash.clonedeep": "4.5.0",
     "lodash.merge": "4.6.0",
-    "osmosis": "1.1.2",
+    "osmosis": "1.1.4",
     "plivo": "0.4.1",
     "pug": "2.0.0-beta6",
-    "react": "15.4.2",
-    "react-dom": "15.4.2",
-    "redis": "2.6.5",
+    "react": "15.5.4",
+    "react-dom": "15.5.4",
+    "redis": "2.7.1",
     "shortid": "2.2.8",
-    "victory": "0.16.0"
+    "victory": "0.20.0"
   },
   "devDependencies": {
     "nodemon": "1.11.0",
-    "semistandard": "9.2.1"
+    "semistandard": "11.0.0"
   }
 }
