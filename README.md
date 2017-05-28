@@ -15,13 +15,19 @@ This tool lets you monitor the price of Southwest flights that you've booked. It
 ## Screenshots
 
 <kbd>
-  <a href="https://raw.githubusercontent.com/scott113341/southwest-price-drop-bot/master/screenshots/web-screenshot.png">
+  <a href="https://raw.githubusercontent.com/scott113341/southwest-price-drop-bot/master/screenshots/web-list.png">
     <img src="./screenshots/web-screenshot.png" width="400" />
   </a>
 </kbd>
 
 <kbd>
-  <a href="https://raw.githubusercontent.com/scott113341/southwest-price-drop-bot/master/screenshots/sms-screenshot.png">
+  <a href="https://raw.githubusercontent.com/scott113341/southwest-price-drop-bot/master/screenshots/web-detail.png">
+    <img src="./screenshots/web-screenshot.png" width="400" />
+  </a>
+</kbd>
+
+<kbd>
+  <a href="https://raw.githubusercontent.com/scott113341/southwest-price-drop-bot/master/screenshots/sms.png">
     <img src="./screenshots/sms-screenshot.png" width="200" />
   </a>
 </kbd>
