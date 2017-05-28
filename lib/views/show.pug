@@ -37,7 +37,7 @@ block content
 
   div.price
     span Current price
-    span $#{alert.latestPrice}
+    span= alert.latestPrice === Infinity ? 'Updating...' : `$${alert.latestPrice}`
   div.price
     span Alert price
     span $#{alert.price}
