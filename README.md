@@ -8,7 +8,7 @@ You can log in with either:
 - The admin username/password combo, example: `admin` and `the-admin-password-123`
 - A phone number/password combo, example: `13034449999` and `the-admin-password-123` (unformatted phone number WITH country code)
 
-The second option is nice when giving out access to friends and family since it will only display their own flight alerts.  Note that the password is the same for all accounts.
+The second option is nice when giving out access to friends and family since it will only display alerts for the given phone number.  Note that the password is the same for all accounts.
 
 
 ## Deployment
