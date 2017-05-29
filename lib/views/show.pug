@@ -8,9 +8,8 @@ block content
       font-size: 24px;
     }
 
-    div.price span:first-child {
-      display: inline-block;
-      width: 95px;
+    table.price td {
+      padding: 0 10px 0 0;
     }
 
     .buttons {
@@ -35,12 +34,14 @@ block content
   div.flight= alert.formattedNumber
   br
 
-  div.price
-    span Current price
-    span= alert.latestPrice === Infinity ? 'Updating...' : `$${alert.latestPrice}`
-  div.price
-    span Alert price
-    span $#{alert.price}
+  table.price
+    tbody
+      tr
+        td Current price
+        td= alert.latestPrice === Infinity ? 'Updating...' : `$${alert.latestPrice}`
+      tr
+        td Alert price
+        td $#{alert.price}
 
   div.graph!= graph
 
