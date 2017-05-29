@@ -5,10 +5,11 @@
   "success_url": "/",
   "env": {
     "ADMIN_NAME": {
-      "description": "Login admin user name."
+      "description": "Login user name for admin user.",
+      "value": "admin"
     },
     "PASSWORD": {
-      "description": "Login password for all accounts."
+      "description": "Login password, used for all accounts."
     },
     "PLIVO_ID": {
       "description": "Your Plivo Auth ID."
