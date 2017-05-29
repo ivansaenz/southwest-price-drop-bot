@@ -3,6 +3,10 @@ include mixins/form-css.pug
 mixin form(alert)
   +form-css
   style.
+    div.form-container {
+      min-height: 420px;
+    }
+
     #from, #to {
       text-transform: uppercase;
     }
@@ -17,88 +21,89 @@ mixin form(alert)
     }
 
   form(action=(alert ? `/${alert.id}` : '/') method='post')
-    div.field
-      label(for='date') Date
-      input(
-        id='date'
-        name='date'
-        type='date'
-        required
-        placeholder='YYYY-MM-DD'
-        min=((new Date()).toISOString().substr(0, 10))
-        value=(alert && alert.date.toISOString().substr(0, 10))
-      )
+    div.form-container
+      div.field
+        label(for='date') Date
+        input(
+          id='date'
+          name='date'
+          type='date'
+          required
+          placeholder='YYYY-MM-DD'
+          min=((new Date()).toISOString().substr(0, 10))
+          value=(alert && alert.date.toISOString().substr(0, 10))
+        )
 
-    div.field
-      label(for='from') From
-      input(
-        id='from'
-        name='from'
-        type='text'
-        required
-        placeholder='SFO'
-        pattern='($^)|([A-Za-z]{3})'
-        maxlength='3'
-        value=(alert && alert.from)
-      )
-      span.help The three-letter airport code, example:
-        code.example SFO
+      div.field
+        label(for='from') From
+        input(
+          id='from'
+          name='from'
+          type='text'
+          required
+          placeholder='SFO'
+          pattern='($^)|([A-Za-z]{3})'
+          maxlength='3'
+          value=(alert && alert.from)
+        )
+        span.help The three-letter airport code, example:
+          code.example SFO
 
-    div.field
-      label(for='to') To
-      input(
-        id='to'
-        name='to'
-        type='text'
-        required
-        placeholder='DEN'
-        pattern='[A-Za-z]{3}'
-        maxlength='3'
-        value=(alert && alert.to)
-      )
-      span.help The three-letter airport code, example:
-        code.example DEN
+      div.field
+        label(for='to') To
+        input(
+          id='to'
+          name='to'
+          type='text'
+          required
+          placeholder='DEN'
+          pattern='[A-Za-z]{3}'
+          maxlength='3'
+          value=(alert && alert.to)
+        )
+        span.help The three-letter airport code, example:
+          code.example DEN
 
-    div.field
-      label(for='number') Flight number(s)
-      input(
-        id='number'
-        name='number'
-        type='text'
-        required
-        placeholder='123, 456'
-        pattern='[\\d,\\s*]+'
-        value=(alert && alert.number)
-      )
-      span.help If nonstop, separate flight numbers with a comma, example:
-        code.example 123, 456
+      div.field
+        label(for='number') Flight number(s)
+        input(
+          id='number'
+          name='number'
+          type='text'
+          required
+          placeholder='123, 456'
+          pattern='[\\d,\\s*]+'
+          value=(alert && alert.number)
+        )
+        span.help If nonstop, separate flight numbers with a comma, example:
+          code.example 123, 456
 
-    div.field
-      label(for='price') Price threshold
-      input(
-        id='price'
-        name='price'
-        type='number'
-        required
-        placeholder='175'
-        value=(alert && alert.price)
-      )
-      span.help We'll text you if the price drops below this threshold, example:
-        code.example 160
+      div.field
+        label(for='price') Price threshold
+        input(
+          id='price'
+          name='price'
+          type='number'
+          required
+          placeholder='175'
+          value=(alert && alert.price)
+        )
+        span.help We'll text you if the price drops below this threshold, example:
+          code.example 160
 
-    div.field
-      label(for='phone') Phone number
-      input(
-        id='phone'
-        name='phone'
-        type='tel'
-        required
-        placeholder='12223334444'
-        pattern='1\\d{10}'
-        value=(alert && alert.phone || !auth.isAdmin && auth.user || undefined)
-      )
-      span.help Include your country code, example:
-        code.example 12223334444
+      div.field
+        label(for='phone') Phone number
+        input(
+          id='phone'
+          name='phone'
+          type='tel'
+          required
+          placeholder='12223334444'
+          pattern='1\\d{10}'
+          value=(alert && alert.phone || !auth.isAdmin && auth.user || undefined)
+        )
+        span.help Include your country code, example:
+          code.example 12223334444
 
     div.field
       div.buttons
