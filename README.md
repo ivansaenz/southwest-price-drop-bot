@@ -18,6 +18,8 @@ The second option is nice when giving out access to friends and family since it 
 1. Open up the `Heroku Scheduler` from your app's dashboard
 1. Add an hourly task that runs `npm run task:check`
 
+When updates become available, you will have to deploy them yourself using the [Heroku CLI](https://devcenter.heroku.com/articles/git).  This app follows [SemVer](http://semver.org/) in its versioning, so make sure to read any release notes when deploying a major version change.
+
 
 ## Screenshots
 
