@@ -10,9 +10,9 @@
   "main": "index.js",
   "private": true,
   "engines": {
-    "node": "7.6.0",
-    "npm": "4.3.0",
-    "yarn": "0.24.5"
+    "node": "8.1.4",
+    "npm": "5.3.0",
+    "yarn": "0.24.6"
   },
   "scripts": {
     "develop": "nodemon --trace-warnings index.js",
