@@ -4,7 +4,7 @@ const redis = require('../lib/redis.js');
 const Alert = require('../lib/bot/alert.js');
 const sms = require('../lib/bot/send-sms.js');
 
-const COOLDOWN = 3 * 24 * 60 * 60; // max one text every 3 days
+const COOLDOWN = 1;//3 * 24 * 60 * 60; // max one text every 3 days
 
 (async () => {
   try {
@@ -42,10 +42,9 @@ const COOLDOWN = 3 * 24 * 60 * 60; // max one text every 3 days
           if (sms.enabled && !cooldown) {
             const noProtocolPath = basePath.substr(basePath.indexOf('://') + 3);
             const message = [
-              `Deal alert! Southwest flight #${alert.number} `,
+              `WN flight #${alert.number} `,
               `from ${alert.from} to ${alert.to} on ${alert.formattedDate} `,
-              `has dropped $${less} to $${alert.latestPrice}.`,
-              `\n\nOnce you re-book your flight, tap this link to lower your alert threshold accordingly: `,
+              `was $${alert.price} is now $${alert.latestPrice}.`,
               `${noProtocolPath}/${alert.id}/change-price?price=${alert.latestPrice}`
             ].join('');
             await sms.sendSms(alert.phone, message);
