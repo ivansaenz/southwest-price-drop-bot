@@ -44,7 +44,7 @@ const COOLDOWN = 1;//3 * 24 * 60 * 60; // max one text every 3 days
             const message = [
               `WN flight #${alert.number} `,
               `from ${alert.from} to ${alert.to} on ${alert.formattedDate} `,
-              `was $${alert.price} is now $${alert.latestPrice}.`,
+              `was $${alert.price} is now $${alert.latestPrice}. `,
               `${noProtocolPath}/${alert.id}/change-price?price=${alert.latestPrice}`
             ].join('');
             await sms.sendSms(alert.phone, message);
