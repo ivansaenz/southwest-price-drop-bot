@@ -99,7 +99,6 @@ mixin form(alert)
           type='email'
           required
           placeholder='name@example.com'
-          pattern='1\\d{10}'
           value=(alert && alert.to_email || !auth.isAdmin && auth.user || undefined)
         )
         span.help Your email, example:
