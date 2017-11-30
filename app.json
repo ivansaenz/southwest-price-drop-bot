@@ -11,14 +11,11 @@
     "PASSWORD": {
       "description": "Login password, used for all accounts."
     },
-    "PLIVO_ID": {
-      "description": "Your Plivo Auth ID."
+    "MAILGUN_API_KEY": {
+      "description": "Your Mailgun API Key."
     },
-    "PLIVO_TOKEN": {
-      "description": "Your Plivo Auth token."
-    },
-    "PLIVO_NUMBER": {
-      "description": "Your Plivo phone number. Example: 12223334444"
+    "MAILGUN_EMAIL": {
+      "description": "Your Mailgun Email to send from."
     },
     "NODE_MODULES_CACHE": {
       "description": "Leave this set to false.",

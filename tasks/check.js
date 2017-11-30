@@ -2,9 +2,9 @@ require('dotenv').config({ silent: true });
 
 const redis = require('../lib/redis.js');
 const Alert = require('../lib/bot/alert.js');
-const sms = require('../lib/bot/send-sms.js');
+const mgEmail = require('../lib/bot/send-email.js');
 
-const COOLDOWN = 1;//3 * 24 * 60 * 60; // max one text every 3 days
+const COOLDOWN = 1;//3 * 24 * 60 * 60; // max one email every 3 days
 
 (async () => {
   try {
@@ -27,7 +27,7 @@ const COOLDOWN = 1;//3 * 24 * 60 * 60; // max one text every 3 days
           return;
         }
 
-        // skip sms message if alert is on cooldown
+        // skip email if alert is on cooldown
         const cooldownKey = alert.key('cooldown');
         const cooldown = await redis.existsAsync(cooldownKey);
 
@@ -39,7 +39,7 @@ const COOLDOWN = 1;//3 * 24 * 60 * 60; // max one text every 3 days
         const less = alert.price - alert.latestPrice;
         if (less > 0) {
           console.log(`${flight} dropped $${less} to $${alert.latestPrice}${cooldown ? ' (on cooldown)' : ''}`);
-          if (sms.enabled && !cooldown) {
+          if (mgEmail.enabled && !cooldown) {
             const noProtocolPath = basePath.substr(basePath.indexOf('://') + 3);
             const message = [
               `WN flight #${alert.number} `,
@@ -47,7 +47,10 @@ const COOLDOWN = 1;//3 * 24 * 60 * 60; // max one text every 3 days
               `was $${alert.price} is now $${alert.latestPrice}. `,
               `${noProtocolPath}/${alert.id}/change-price?price=${alert.latestPrice}`
             ].join('');
-            await sms.sendSms(alert.phone, message);
+            const subject = [
+              `Southwest Price Drop Alert: $${alert.price} -> $${alert.latestPrice}. `
+            ].join('');
+            await mgEmail.sendEmail(alert.email, subject, message);
             await redis.setAsync(cooldownKey, '');
             await redis.expireAsync(cooldownKey, COOLDOWN);
           }

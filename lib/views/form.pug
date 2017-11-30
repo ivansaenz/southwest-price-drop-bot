@@ -75,7 +75,7 @@ mixin form(alert)
           pattern='[\\d,\\s*]+'
           value=(alert && alert.number)
         )
-        span.help If nonstop, separate flight numbers with a comma, example:
+        span.help If not non-stop, separate flight numbers with a comma, example:
           code.example 123, 456
 
       div.field
@@ -88,22 +88,22 @@ mixin form(alert)
           placeholder='175'
           value=(alert && alert.price)
         )
-        span.help We'll text you if the price drops below this threshold, example:
+        span.help We'll email you if the price drops below this threshold, example:
           code.example 160
 
       div.field
-        label(for='phone') Phone number
+        label(for='to_email') Email
         input(
-          id='phone'
-          name='phone'
-          type='tel'
+          id='to_email'
+          name='to_email'
+          type='email'
           required
-          placeholder='12223334444'
+          placeholder='name@example.com'
           pattern='1\\d{10}'
-          value=(alert && alert.phone || !auth.isAdmin && auth.user || undefined)
+          value=(alert && alert.to_email || !auth.isAdmin && auth.user || undefined)
         )
-        span.help Include your country code, example:
-          code.example 12223334444
+        span.help Your email, example:
+          code.example name@example.com
 
     div.field
       div.buttons
