@@ -24,22 +24,26 @@ When updates become available, you will have to deploy them yourself using the [
 ## Screenshots
 
 <kbd>
-  <a href="https://raw.githubusercontent.com/scott113341/southwest-price-drop-bot/master/screenshots/web-list.png">
+  <a href="https://raw.githubusercontent.com/samyun/southwest-price-drop-bot/master/screenshots/web-list.png">
     <img src="./screenshots/web-list.png" height="400" />
   </a>
 </kbd>
 
 <kbd>
-  <a href="https://raw.githubusercontent.com/scott113341/southwest-price-drop-bot/master/screenshots/web-detail.png">
+  <a href="https://raw.githubusercontent.com/samyun/southwest-price-drop-bot/master/screenshots/web-detail.png">
     <img src="./screenshots/web-detail.png" height="400" />
   </a>
 </kbd>
 
 <kbd>
-  <a href="https://raw.githubusercontent.com/scott113341/southwest-price-drop-bot/master/screenshots/sms.png">
+  <a href="https://raw.githubusercontent.com/samyun/southwest-price-drop-bot/master/screenshots/sms.png">
     <img src="./screenshots/sms.png" height="400" />
   </a>
 </kbd>
+
+## Attribution
+
+This is a fork of minamhere's fork of scott113341's original project.
 
 
 [deploy-image]: https://www.herokucdn.com/deploy/button.svg
