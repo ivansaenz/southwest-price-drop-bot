@@ -27,7 +27,13 @@ block content
   h3 Alert details
 
   div.date= alert.formattedDate
-  div.to_email= alert.formattedEmail
+  div.user= `User: ${alert.user}`
+  if alert.formattedPhone !== ""
+    div.phone= `Texting: ${alert.formattedPhone}`
+  if alert.formattedEmail !== ""
+    div.to_email= `Emailing: ${alert.formattedEmail}`
+  if alert.formattedPhone === "" && alert.formattedEmail === ""
+    div.no-notifications No notifications
   br
 
   div.from-to= `${alert.from}-${alert.to}`

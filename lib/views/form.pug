@@ -91,8 +91,23 @@ mixin form(alert)
           placeholder='175'
           value=(alert && alert.price)
         )
-        span.help We'll email you if the price drops below this threshold, example:
+        span.help We'll message you if the price drops below this threshold, example:
           code.example 160
+
+      div.field
+        label(for='phone') Phone number
+        input(
+          id='phone'
+          name='phone'
+          type='tel'
+          placeholder='12223334444'
+          pattern='1\\d{10}'
+          value=(alert && alert.phone || !auth.isAdmin && auth.user || undefined)
+        )
+        span.help Enter if you want to be texted your price drop
+          br
+          | Include your country code, example:
+          code.example 12223334444
 
       div.field
         label(for='to_email') Email
@@ -100,15 +115,11 @@ mixin form(alert)
           id='to_email'
           name='to_email'
           type='email'
-          required
           placeholder='name@example.com'
           value=(alert && alert.to_email || !auth.isAdmin && auth.user || undefined)
         )
-        span.help Your email, example:
+        span.help Enter if you want to be emailed your price drop, example:
           code.example name@example.com
-          br
-          | Also supports SMS gateway, example:
-          code.example 1234567890@tmomail.net
 
     div.field
       div.buttons

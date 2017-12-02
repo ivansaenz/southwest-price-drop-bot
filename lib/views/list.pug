@@ -104,7 +104,10 @@ block content
     }
 
 
-  h3 Alerts
+  h2 Alerts
+  h4 Welcome '#{auth.user}'
+  if auth.isAdmin
+    h4 Note that as the administrator, you can see all alerts.
 
   div.buttons
     a.button.new-button(href='/new') New alert
@@ -126,7 +129,12 @@ block content
               div.flight= alert.formattedNumber
             div.info-box
               div.date= alert.formattedDate
-              div.to_email= alert.formattedEmail
+              if alert.formattedPhone != ""
+                div.user= alert.formattedPhone
+              else if alert.formattedEmail != ""
+                div.user= alert.formattedEmail
+              else
+                div.user= alert.user
             div.price-box
               div.price-group
                 span.price= '$' + alert.price

@@ -11,11 +11,25 @@
     "PASSWORD": {
       "description": "Login password, used for all accounts."
     },
+    "PLIVO_ID": {
+      "description": "If you would like to use sms, enter your Plivo Auth ID.",
+      "required": false
+    },
+    "PLIVO_TOKEN": {
+      "description": "Your Plivo Auth token.",
+      "required": false
+    },
+    "PLIVO_NUMBER": {
+      "description": "Your Plivo phone number. Example: 12223334444",
+      "required": false
+    },
     "MAILGUN_API_KEY": {
       "description": "Your Mailgun API Key."
+      "required": false
     },
     "MAILGUN_EMAIL": {
       "description": "Your Mailgun Email to send from."
+      "required": false
     },
     "NODE_MODULES_CACHE": {
       "description": "Leave this set to false.",

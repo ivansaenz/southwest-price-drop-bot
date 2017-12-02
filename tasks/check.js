@@ -3,6 +3,7 @@ require('dotenv').config({ silent: true });
 const redis = require('../lib/redis.js');
 const Alert = require('../lib/bot/alert.js');
 const mgEmail = require('../lib/bot/send-email.js');
+const sms = require('../lib/bot/send-sms.js');
 
 const COOLDOWN = 1;
 
@@ -27,7 +28,7 @@ const COOLDOWN = 1;
           return;
         }
 
-        // skip email if alert is on cooldown
+        // skip message if alert is on cooldown
         const cooldownKey = alert.key('cooldown');
         const cooldown = await redis.existsAsync(cooldownKey);
 
@@ -39,7 +40,7 @@ const COOLDOWN = 1;
         const less = alert.price - alert.latestPrice;
         if (less > 0) {
           console.log(`${flight} dropped $${less} to $${alert.latestPrice}${cooldown ? ' (on cooldown)' : ''}`);
-          if (mgEmail.enabled && !cooldown) {
+          if (!cooldown) {
             const noProtocolPath = basePath.substr(basePath.indexOf('://') + 3);
             const message = [
               `WN flight #${alert.number} `,
@@ -51,8 +52,9 @@ const COOLDOWN = 1;
             const subject = [
               `✈ Southwest Price Drop Alert: $${alert.price} → $${alert.latestPrice}. `
             ].join('');
-            console.log("Sending email with subject", subject);
-            await mgEmail.sendEmail(alert.to_email, subject, message);
+            if (mgEmail.enabled && alert.to_email !== "") {await mgEmail.sendEmail(alert.to_email, subject, message);}
+            if (sms.enabled && alert.phone !== "") {await sms.sendSms(alert.phone, message);}
+
             await redis.setAsync(cooldownKey, '');
             await redis.expireAsync(cooldownKey, COOLDOWN);
           }

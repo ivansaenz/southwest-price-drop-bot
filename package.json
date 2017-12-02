@@ -1,6 +1,6 @@
 {
   "name": "southwest-price-drop-bot",
-  "version": "1.9.5",
+  "version": "2.0.0",
   "description": "Bot that watches Southwest flights for price drops.",
   "author": "Sam Yun",
   "license": "MIT",
@@ -35,6 +35,7 @@
     "mailgun-js": "^0.13.1",
     "osmosis": "^1.1.4",
     "package.json": "^2.0.1",
+    "plivo": "^0.4.1",
     "pug": "^2.0.0-rc.4",
     "react": "^15.6.2",
     "react-dom": "^15.6.2",
