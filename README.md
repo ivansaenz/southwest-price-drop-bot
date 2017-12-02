@@ -8,9 +8,9 @@ Note that you need to have a [Mailgun](https://www.mailgun.com) account to send 
 You can log in with either:
 
 - The admin username/password combo, example: `admin` and `the-admin-password-123`
-- A username/password combo, example: `mom` and `the-admin-password-123`
+- A email/password combo, example: `mom@example.com` and `the-admin-password-123`
 
-The second option is nice when giving out access to friends and family since it will only display alerts for the given username.  Note that the password is the same for all accounts, and the admin can see all alerts.
+The second option is nice when giving out access to friends and family since it will only display alerts for the given email.  Note that the password is the same for all accounts, and the admin can see all alerts.
 
 
 ## Deployment
