@@ -43,12 +43,13 @@ const COOLDOWN = 1;
             const noProtocolPath = basePath.substr(basePath.indexOf('://') + 3);
             const message = [
               `WN flight #${alert.number} `,
-              `${alert.from} → ${alert.to} on ${alert.formattedDate} `,
-              `was $${alert.price} is now $${alert.latestPrice}. `,
+              `${alert.from} to ${alert.to} on ${alert.formattedDate} `,
+              `was $${alert.price}, is now $${alert.latestPrice}. `,
+              `\n\nOnce rebooked, tap link to lower alert threshold: `,
               `${noProtocolPath}/${alert.id}/change-price?price=${alert.latestPrice}`
             ].join('');
             const subject = [
-              `Southwest Price Drop Alert: $${alert.price} → $${alert.latestPrice}. `
+              `✈ Southwest Price Drop Alert: $${alert.price} → $${alert.latestPrice}. `
             ].join('');
             console.log("Sending email with subject", subject);
             await mgEmail.sendEmail(alert.to_email, subject, message);
