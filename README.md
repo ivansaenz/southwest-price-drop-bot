@@ -1,14 +1,16 @@
 # southwest-price-drop-bot
 
 
-This tool lets you monitor the price of Southwest flights that you've booked. It will text you if the price drops below what you originally paid. Then you can [re-book the same flight](http://dealswelike.boardingarea.com/2014/02/28/if-a-southwest-flight-goes-down-in-price/) and get Southwest credit for the price difference.
+This tool lets you monitor the price of Southwest flights that you've booked. It will email you if the price drops below what you originally paid. Then you can [re-book the same flight](http://dealswelike.boardingarea.com/2014/02/28/if-a-southwest-flight-goes-down-in-price/) and get Southwest credit for the price difference.
+
+Note that you need to have a [Mailgun](https://www.mailgun.com) account to send the emails.
 
 You can log in with either:
 
 - The admin username/password combo, example: `admin` and `the-admin-password-123`
-- A phone number/password combo, example: `13034449999` and `the-admin-password-123` (unformatted phone number WITH country code)
+- A username/password combo, example: `mom` and `the-admin-password-123`
 
-The second option is nice when giving out access to friends and family since it will only display alerts for the given phone number.  Note that the password is the same for all accounts.
+The second option is nice when giving out access to friends and family since it will only display alerts for the given username.  Note that the password is the same for all accounts, and the admin can see all alerts.
 
 
 ## Deployment
@@ -43,7 +45,7 @@ When updates become available, you will have to deploy them yourself using the [
 
 ## Attribution
 
-This is a fork of minamhere's fork of scott113341's original project.
+This is a fork of [minamhere's fork](https://github.com/minamhere/southwest-price-drop-bot) of [maverick915's fork](https://github.com/maverick915/southwest-price-drop-bot) of [scott113341's original project](https://github.com/scott113341/southwest-price-drop-bot).
 
 
 [deploy-image]: https://www.herokucdn.com/deploy/button.svg
