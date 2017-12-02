@@ -39,7 +39,7 @@ When updates become available, you will have to deploy them yourself using the [
 
 <kbd>
   <a href="https://raw.githubusercontent.com/samyun/southwest-price-drop-bot/master/screenshots/email-alert.png">
-    <img src="./screenshots/email-alert.png" height="400" />
+    <img src="./screenshots/email-alert.jpeg" height="400" />
   </a>
 </kbd>
 
