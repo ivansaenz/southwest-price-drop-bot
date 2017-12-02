@@ -4,7 +4,7 @@ const redis = require('../lib/redis.js');
 const Alert = require('../lib/bot/alert.js');
 const mgEmail = require('../lib/bot/send-email.js');
 
-const COOLDOWN = 1;//3 * 24 * 60 * 60; // max one email every 3 days
+const COOLDOWN = 1;
 
 (async () => {
   try {
@@ -43,14 +43,15 @@ const COOLDOWN = 1;//3 * 24 * 60 * 60; // max one email every 3 days
             const noProtocolPath = basePath.substr(basePath.indexOf('://') + 3);
             const message = [
               `WN flight #${alert.number} `,
-              `from ${alert.from} to ${alert.to} on ${alert.formattedDate} `,
+              `${alert.from} → ${alert.to} on ${alert.formattedDate} `,
               `was $${alert.price} is now $${alert.latestPrice}. `,
               `${noProtocolPath}/${alert.id}/change-price?price=${alert.latestPrice}`
             ].join('');
             const subject = [
-              `Southwest Price Drop Alert: $${alert.price} -> $${alert.latestPrice}. `
+              `Southwest Price Drop Alert: $${alert.price} → $${alert.latestPrice}. `
             ].join('');
-            await mgEmail.sendEmail(alert.email, subject, message);
+            console.log("Sending email with subject", subject);
+            await mgEmail.sendEmail(alert.to_email, subject, message);
             await redis.setAsync(cooldownKey, '');
             await redis.expireAsync(cooldownKey, COOLDOWN);
           }

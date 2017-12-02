@@ -38,10 +38,13 @@ block content
     tbody
       tr
         td Current price
-        td= alert.latestPrice === Infinity ? 'Updating...' : `$${alert.latestPrice}`
+        td= alert.latestPrice === Infinity ? 'Updating... *' : `$${alert.latestPrice}`
       tr
         td Alert price
         td $#{alert.price}
+      tr
+        td= alert.latestPrice === Infinity ? '*' : ''
+        td= alert.latestPrice === Infinity ? 'Verify correct information if not updated after refresh' : ''
 
   div.graph!= graph
 
@@ -49,3 +52,5 @@ block content
     a.button.edit-button(href=`/${alert.id}/edit`) Edit
     div.button-spacer
     a.button.delete-button(href=`/${alert.id}/delete`) Delete
+
+
