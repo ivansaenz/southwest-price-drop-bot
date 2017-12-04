@@ -24,11 +24,11 @@
       "required": false
     },
     "MAILGUN_API_KEY": {
-      "description": "Your Mailgun API Key."
+      "description": "Your Mailgun API Key.",
       "required": false
     },
     "MAILGUN_EMAIL": {
-      "description": "Your Mailgun Email to send from."
+      "description": "Your Mailgun Email to send from.",
       "required": false
     },
     "NODE_MODULES_CACHE": {
