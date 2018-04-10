@@ -27,7 +27,7 @@
     "message-headers": [],
     "recipients": "recipients@example.com",
     "sender": "sender@example.com",
-    "stripped-html": ""
+    "stripped-html": "",
     "stripped-signature": "",
     "stripped-text": "",
     "subject": "Fwd: Flight reservation (ABC123) | 21JUL17 | DEN-OMA | Lastname/First MiddleName"
