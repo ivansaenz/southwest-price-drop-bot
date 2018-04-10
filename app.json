@@ -12,7 +12,7 @@
       "description": "Login password, used for all accounts."
     },
     "PLIVO_ID": {
-      "description": "If you would like to use sms, enter your Plivo Auth ID.",
+      "description": "If you would like to use sms text messages, enter your Plivo Auth ID.",
       "required": false
     },
     "PLIVO_TOKEN": {
