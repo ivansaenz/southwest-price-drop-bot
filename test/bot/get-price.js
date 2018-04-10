@@ -3,7 +3,6 @@ const test = require('tape');
 
 const { getFlights } = require('../../lib/bot/get-price.js');
 
-
 test('getFlights domestic', async t => {
   const nextWeek = (new Date()).setDate((new Date()).getDate() + 1);
   const args = {
@@ -19,7 +18,6 @@ test('getFlights domestic', async t => {
   t.true(flights.outbound[0].price);
   t.end();
 });
-
 
 test('getFlights international', async t => {
   const nextWeek = (new Date()).setDate((new Date()).getDate() + 1);
