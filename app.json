@@ -24,11 +24,15 @@
       "required": false
     },
     "MAILGUN_API_KEY": {
-      "description": "Your Mailgun API Key.",
+      "description": "If you would like to use email, enter your Mailgun API Key.",
       "required": false
     },
+    "MAILGUN_DOMAIN": {
+      "description": "The domain to send emails from, e.g. mg.example.com",
+      "required": false
+     },
     "MAILGUN_EMAIL": {
-      "description": "Your Mailgun Email to send from.",
+      "description": "Email address to send mail from with Mailgun.  Example: Mailgun Sandbox <postmaster@sandbox0abcdefghijklmnopqrstuvwxyz.mailgun.org>",
       "required": false
     },
     "NODE_MODULES_CACHE": {
