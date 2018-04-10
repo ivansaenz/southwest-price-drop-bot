@@ -53,6 +53,7 @@ When updates become available, you will have to deploy them yourself using the [
 ## Attribution
 
 This is a fork of [minamhere's fork](https://github.com/minamhere/southwest-price-drop-bot) of [maverick915's fork](https://github.com/maverick915/southwest-price-drop-bot) of [scott113341's original project](https://github.com/scott113341/southwest-price-drop-bot).
+Downstream changes from [PetroccoCo](https://github.com/PetroccoCo/southwest-price-drop-bot) (email handling) were also integrated.
 
 
 [deploy-image]: https://www.herokucdn.com/deploy/button.svg
