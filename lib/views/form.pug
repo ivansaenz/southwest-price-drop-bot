@@ -76,7 +76,7 @@ mixin form(alert)
               type='tel'
               placeholder='12223334444'
               pattern='1\\d{10}'
-              value=(alert && alert.phone || !auth.isAdmin && auth.user || undefined)
+              value=(alert && alert.phone || undefined)
             )
             label.mdl-textfield__label(for='phone') Phone number
             span.help Enter if you want to be texted your price drop
@@ -89,7 +89,7 @@ mixin form(alert)
               name='to_email'
               type='email'
               placeholder='name@example.com'
-              value=(alert && alert.to_email || !auth.isAdmin && auth.user || undefined)
+              value=(alert && alert.to_email || undefined)
             )
             label.mdl-textfield__label(for='to_email') Email
             span.help Enter if you want to be emailed your price drop, example:

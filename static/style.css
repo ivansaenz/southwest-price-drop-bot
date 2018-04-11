@@ -27,11 +27,12 @@ body {
 .welcome {
   text-align: center;
   font-size: 1.5em;
-  padding: 6px 4px 0px;
+  padding: 6px 4px 2px;
 }
 
 .flight {
   text-align: center;
+  z-index: -1;
 }
 
 .call-signs {
