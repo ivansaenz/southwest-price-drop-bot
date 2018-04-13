@@ -32,7 +32,6 @@ body {
 
 .flight {
   text-align: center;
-  z-index: -1;
 }
 
 .call-signs {
@@ -86,6 +85,10 @@ a.flight-prices {
 
 #from, #to {
   text-transform: uppercase;
+}
+
+.mdl-button {
+  z-index: 1;
 }
 
 .mdl-textfield {
