@@ -10,10 +10,11 @@ block content
             i.material-icons flight_land
             span.ticket= alert.to
           .flight-info
-            .info-group
-              span Flight #
-              br
-              span.ticket= alert.formattedNumber
+            if alert.alertType == ALERT_TYPES.SINGLE
+              .info-group
+                span Flight #
+                br
+                span.ticket= alert.formattedNumber
             .info-group
               span Date
               br

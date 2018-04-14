@@ -45,18 +45,22 @@ mixin form(alert)
             span.help The three-letter airport code, example:
               code.example SEA
 
-          .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
-            input#number.mdl-textfield__input(
-              name='number'
-              type='text'
-              required
-              placeholder='123, 456'
-              pattern='[\\d,\\s*]+'
-              value=(alert && alert.number)
-            )
-            label.mdl-textfield__label(for='number') Flight number(s)
-            span.help If the flight has one or more stops, separate flight numbers with a comma, example:
-              code.example 123, 456
+          if (alert && (alert.alertType || alert.alertType == ALERT_TYPES.SINGLE)) || (alertType && alertType == ALERT_TYPES.SINGLE)
+            input(type="hidden" name="alertType" value=ALERT_TYPES.SINGLE)
+            .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
+              input#number.mdl-textfield__input(
+                name='number'
+                type='text'
+                required
+                placeholder='123, 456'
+                pattern='[\\d,\\s*]+'
+                value=(alert && alert.number)
+              )
+              label.mdl-textfield__label(for='number') Flight number(s)
+              span.help If the flight has one or more stops, separate flight numbers with a comma, example:
+                code.example 123, 456
+          else
+            input(type="hidden" name="alertType" value=ALERT_TYPES.DAY)
 
           .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
             input#price.mdl-textfield__input(

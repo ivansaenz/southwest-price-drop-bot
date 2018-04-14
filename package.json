@@ -36,6 +36,7 @@
     "lodash.clonedeep": "^4.5.0",
     "lodash.merge": "^4.6.0",
     "mailgun-js": "^0.13.1",
+    "npm": "^5.8.0",
     "osmosis": "^1.1.4",
     "package.json": "^2.0.1",
     "plivo": "^0.4.1",

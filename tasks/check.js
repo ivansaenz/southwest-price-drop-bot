@@ -4,6 +4,7 @@ const redis = require('../lib/redis.js');
 const Alert = require('../lib/bot/alert.js');
 const mgEmail = require('../lib/bot/send-email.js');
 const sms = require('../lib/bot/send-sms.js');
+const { ALERT_TYPES } = require('../lib/constants.js');
 
 const COOLDOWN = 1;
 
@@ -42,13 +43,25 @@ const COOLDOWN = 1;
           console.log(`${flight} dropped $${less} to $${alert.latestPrice}${cooldown ? ' (on cooldown)' : ''}`);
           if (!cooldown) {
             const noProtocolPath = basePath.substr(basePath.indexOf('://') + 3);
-            const message = [
-              `WN flight #${alert.number} `,
-              `${alert.from} to ${alert.to} on ${alert.formattedDate} `,
-              `was $${alert.price}, is now $${alert.latestPrice}. `,
-              `\n\nOnce rebooked, tap link to lower alert threshold: `,
-              `${noProtocolPath}/${alert.id}/change-price?price=${alert.latestPrice}`
-            ].join('');
+            let message;
+            if (alert.alertType === ALERT_TYPES.SINGLE) {
+              message = [
+                `WN flight #${alert.number} `,
+                `${alert.from} to ${alert.to} on ${alert.formattedDate} `,
+                `was $${alert.price}, is now $${alert.latestPrice}. `,
+                `\n\nOnce rebooked, tap link to lower alert threshold: `,
+                `${noProtocolPath}/${alert.id}/change-price?price=${alert.latestPrice}`
+              ].join('');
+            }
+            else if (alert.alertType === ALERT_TYPES.DAY) {
+              message = [
+                `A cheaper Southwest flight on ${alert.formattedDate} `,
+                `${alert.from} to ${alert.to} was found! `,
+                `Was $${alert.price}, is now $${alert.latestPrice}. `,
+                `\n\nOnce rebooked, tap link to lower alert threshold: `,
+                `${noProtocolPath}/${alert.id}/change-price?price=${alert.latestPrice}`
+              ].join('');
+            }
             const subject = [
               `✈ Southwest Price Drop Alert: $${alert.price} → $${alert.latestPrice}. `
             ].join('');

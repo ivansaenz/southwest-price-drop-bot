@@ -27,10 +27,11 @@ block content
                 i.material-icons flight_land
                 span.ticket= alert.to
               .flight-info
-                .info-group
-                  span Flight #
-                  br
-                  span.ticket= alert.formattedNumber
+                if alert.alertType == ALERT_TYPES.SINGLE
+                  .info-group
+                    span Flight #
+                    br
+                    span.ticket= alert.formattedNumber
                 .info-group
                   span Date
                   br
@@ -47,5 +48,12 @@ block content
                   br
                   span.description currently
 
-  a.mdl-button.mdl-js-button.mdl-button--fab.mdl-js-ripple-effect.mdl-button--colored.bottom-right(href='/new')
-    i.material-icons add
+  .bottom-right
+    #add-menu.mdl-button.mdl-js-button.mdl-button--fab.mdl-js-ripple-effect.mdl-button--colored
+      i.material-icons add
+
+    ul.mdl-menu.mdl-menu--top-right.mdl-js-menu.mdl-js-ripple-effect(data-mdl-for='add-menu')
+      li
+        a.mdl-menu__item(href='/new-single') Specific Flight
+      li
+        a.mdl-menu__item(href='/new-day') Specific Day
