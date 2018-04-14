@@ -18,6 +18,12 @@ body {
   min-height: auto;
 }
 
+.mdl-cell {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
 .bottom-right {
   position: fixed;
   bottom: 20px;
@@ -25,10 +31,11 @@ body {
   z-index: 1;
 }
 
-.welcome {
+.wide-card {
   text-align: center;
   font-size: 1.5em;
   padding: 6px 4px 2px;
+  width: 512px;
 }
 
 .flight {

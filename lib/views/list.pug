@@ -1,52 +1,48 @@
 extends layout.pug
 
+include header.pug
+
 block content
-  .mdl-grid.mdl-cell--2-col.mdl-cell--4-col-tablet.mdl-cell--12-col-phone
-
-    .mdl-cell.mdl-cell--12-col
-      .mdl-card.mdl-shadow--2dp.welcome
-        if alerts.length
-          b Welcome back #{auth.user}!
-        else
-          b Welcome #{auth.user}!
-          br
-          p Click on the + icon on the bottom right to create your first alert.
-        if auth.isAdmin
-          br
-          p Note that as the administrator, you can see all alerts.
-    if alerts.length
-      each alert in alerts
-        .mdl-cell.mdl-cell--12-col
-          .mdl-card.mdl-shadow--2dp.flight
-            if alert.priceHasDropped
-              a.mdl-card__actions.mdl-card--border.flight-saver(href='/' + alert.id)
-                | Price drop alert! Re-book and save $#{alert.price - alert.latestPrice}!
-            .mdl-card__supporting-text
-              .call-signs
-                span.ticket= alert.from
-                i.material-icons flight_land
-                span.ticket= alert.to
-              .flight-info
-                if alert.alertType == ALERT_TYPES.SINGLE
-                  .info-group
-                    span Flight #
-                    br
-                    span.ticket= alert.formattedNumber
+  if alerts.length
+    +header("Welcome back " + auth.user +"!")
+      if auth.isAdmin
+        p Note that as the administrator, you can see all alerts.
+  else
+    +header("Welcome " + auth.user +"!")
+      p Click on the + icon on the bottom right to create your first alert.
+  if alerts.length
+    each alert in alerts
+      .mdl-cell.mdl-cell--12-col
+        .mdl-card.mdl-shadow--2dp.flight
+          if alert.priceHasDropped
+            a.mdl-card__actions.mdl-card--border.flight-saver(href='/' + alert.id)
+              | Price drop alert! Re-book and save $#{alert.price - alert.latestPrice}!
+          .mdl-card__supporting-text
+            .call-signs
+              span.ticket= alert.from
+              i.material-icons flight_land
+              span.ticket= alert.to
+            .flight-info
+              if alert.alertType == ALERT_TYPES.SINGLE
                 .info-group
-                  span Date
+                  span Flight #
                   br
-                  span.ticket= alert.formattedDate
-
-            a.mdl-card__actions.mdl-card--border.flight-prices(href='/' + alert.id)
+                  span.ticket= alert.formattedNumber
               .info-group
-                span.price= '$' + alert.price
+                span Date
                 br
-                span.description you paid
-              if alert.latestPrice < Infinity
-                .info-group
-                  span.price= '$' + alert.latestPrice
-                  br
-                  span.description currently
+                span.ticket= alert.formattedDate
+
+          a.mdl-card__actions.mdl-card--border.flight-prices(href='/' + alert.id)
+            .info-group
+              span.price= '$' + alert.price
+              br
+              span.description you paid
+            if alert.latestPrice < Infinity
+              .info-group
+                span.price= '$' + alert.latestPrice
+                br
+                span.description currently
 
   .bottom-right
     #add-menu.mdl-button.mdl-js-button.mdl-button--fab.mdl-js-ripple-effect.mdl-button--colored

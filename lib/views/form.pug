@@ -1,5 +1,5 @@
 mixin form(alert)
-  form.mdl-grid.mdl-cell--2-col.mdl-cell--4-col-tablet.mdl-cell--12-col-phone(action=(alert ? `/${alert.id}` : '/') method='post')
+  form.mdl-grid(action=(alert ? `/${alert.id}` : '/') method='post')
     .mdl-cell.mdl-cell--12-col
       .mdl-card.mdl-shadow--2dp
         .mdl-card__supporting-text
@@ -7,6 +7,7 @@ mixin form(alert)
             input#date.mdl-textfield__input(
               name='date'
               type='date'
+              disabled=alert
               required
               pattern='(([12]\\d{3}[-/.]((0[1-9]|1[0-2])|([1-9]))[-/.]((0[1-9]|[12]\\d|3[01])|([1-9])))|(((0[1-9]|1[0-2])|([1-9]))[-/.]((0[1-9]|[12]\\d|3[01])|([1-9]))[-/.](([12]\\d{3})|(\\d{2}))))'
               placeholder='YYYY-MM-DD'
@@ -21,6 +22,7 @@ mixin form(alert)
             input#from.mdl-textfield__input(
               name='from'
               type='text'
+              disabled=alert
               required
               placeholder='DEN'
               pattern='($^)|([A-Za-z]{3})'
@@ -35,6 +37,7 @@ mixin form(alert)
             input#to.mdl-textfield__input(
               name='to'
               type='text'
+              disabled=alert
               required
               placeholder='SFO'
               pattern='[A-Za-z]{3}'
@@ -51,6 +54,7 @@ mixin form(alert)
               input#number.mdl-textfield__input(
                 name='number'
                 type='text'
+                disabled=alert
                 required
                 placeholder='123, 456'
                 pattern='[\\d,\\s*]+'
@@ -78,7 +82,6 @@ mixin form(alert)
             input#phone.mdl-textfield__input(
               name='phone'
               type='tel'
-              placeholder='12223334444'
               pattern='1\\d{10}'
               value=(alert && alert.phone || undefined)
             )
@@ -92,13 +95,13 @@ mixin form(alert)
             input#to_email.mdl-textfield__input(
               name='to_email'
               type='email'
-              placeholder='name@example.com'
               value=(alert && alert.to_email || undefined)
             )
             label.mdl-textfield__label(for='to_email') Email
             span.help Enter if you want to be emailed your price drop, example:
               code.example name@example.com
 
-        .mdl-card__actions.mdl-card--border
-          button.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.mdl-button--colored(type='submit')= alert ? 'Save changes' : 'Create alert'
-          a.mdl-button.mdl-button--colored.mdl-js-button.mdl-js-ripple-effect(href='/') Cancel
+        .mdl-cell.mdl-cell--12-col
+          .mdl-card__actions.mdl-card--border
+            button.mdl-button.mdl-js-button.mdl-button--raised.mdl-js-ripple-effect.mdl-button--colored(type='submit')= alert ? 'Save changes' : 'Create alert'
+            a.mdl-button.mdl-button--colored.mdl-js-button.mdl-js-ripple-effect(href='/') Cancel
