@@ -1,19 +1,20 @@
 extends layout.pug
 
 block content
-  .mdl-grid.mdl-cell--2-col.mdl-cell--4-col-tablet.mdl-cell--12-col-phone
+  .mdl-grid
     .mdl-cell.mdl-cell--12-col
-      .mdl-card.mdl-shadow--2dp.flight
+      .mdl-card.wide-card.mdl-shadow--2dp.flight
         .mdl-card__supporting-text
           .call-signs
             span.ticket= alert.from
             i.material-icons flight_land
             span.ticket= alert.to
           .flight-info
-            .info-group
-              span Flight #
-              br
-              span.ticket= alert.formattedNumber
+            if alert.alertType == ALERT_TYPES.SINGLE
+              .info-group
+                span Flight #
+                br
+                span.ticket= alert.formattedNumber
             .info-group
               span Date
               br

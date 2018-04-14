@@ -18,16 +18,24 @@ body {
   min-height: auto;
 }
 
+.mdl-cell {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
 .bottom-right {
   position: fixed;
   bottom: 20px;
   right: 20px;
+  z-index: 1;
 }
 
-.welcome {
+.wide-card {
   text-align: center;
   font-size: 1.5em;
   padding: 6px 4px 2px;
+  width: 512px;
 }
 
 .flight {
@@ -85,10 +93,6 @@ a.flight-prices {
 
 #from, #to {
   text-transform: uppercase;
-}
-
-.mdl-button {
-  z-index: 1;
 }
 
 .mdl-textfield {
