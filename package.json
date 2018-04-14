@@ -18,6 +18,7 @@
     "develop": "nodemon --trace-warnings index.js",
     "lint": "semistandard --fix",
     "start": "node --trace-warnings index.js",
+    "debug": "node --inspect index.js",
     "task:check": "node --trace-warnings tasks/check.js",
     "test": "tape test/**/*.js"
   },

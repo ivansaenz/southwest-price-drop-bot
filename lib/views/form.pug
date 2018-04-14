@@ -7,7 +7,7 @@ mixin form(alert)
             input#date.mdl-textfield__input(
               name='date'
               type='date'
-              disabled=alert
+              readonly=alert
               required
               pattern='(([12]\\d{3}[-/.]((0[1-9]|1[0-2])|([1-9]))[-/.]((0[1-9]|[12]\\d|3[01])|([1-9])))|(((0[1-9]|1[0-2])|([1-9]))[-/.]((0[1-9]|[12]\\d|3[01])|([1-9]))[-/.](([12]\\d{3})|(\\d{2}))))'
               placeholder='YYYY-MM-DD'
@@ -22,7 +22,7 @@ mixin form(alert)
             input#from.mdl-textfield__input(
               name='from'
               type='text'
-              disabled=alert
+              readonly=alert
               required
               placeholder='DEN'
               pattern='($^)|([A-Za-z]{3})'
@@ -37,7 +37,7 @@ mixin form(alert)
             input#to.mdl-textfield__input(
               name='to'
               type='text'
-              disabled=alert
+              readonly=alert
               required
               placeholder='SFO'
               pattern='[A-Za-z]{3}'
@@ -48,13 +48,13 @@ mixin form(alert)
             span.help The three-letter airport code, example:
               code.example SEA
 
-          if (alert && (alert.alertType || alert.alertType == ALERT_TYPES.SINGLE)) || (alertType && alertType == ALERT_TYPES.SINGLE)
+          if (alert && (alert.alertType && alert.alertType == ALERT_TYPES.SINGLE)) || (alertType && alertType == ALERT_TYPES.SINGLE)
             input(type="hidden" name="alertType" value=ALERT_TYPES.SINGLE)
             .mdl-textfield.mdl-js-textfield.mdl-textfield--floating-label
               input#number.mdl-textfield__input(
                 name='number'
                 type='text'
-                disabled=alert
+                readonly=alert
                 required
                 placeholder='123, 456'
                 pattern='[\\d,\\s*]+'
