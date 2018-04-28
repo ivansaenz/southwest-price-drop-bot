@@ -52,8 +52,7 @@ const COOLDOWN = 1;
                 `\n\nOnce rebooked, tap link to lower alert threshold: `,
                 `${noProtocolPath}/${alert.id}/change-price?price=${alert.latestPrice}`
               ].join('');
-            }
-            else if (alert.alertType === ALERT_TYPES.DAY) {
+            } else if (alert.alertType === ALERT_TYPES.DAY) {
               message = [
                 `A cheaper Southwest flight on ${alert.formattedDate} `,
                 `${alert.from} to ${alert.to} was found! `,
