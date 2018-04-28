@@ -23,7 +23,8 @@ When creating alerts, note that the email and phone numbers are optional. If tho
 
 When updates become available, you will have to deploy them yourself using the [Heroku CLI](https://devcenter.heroku.com/articles/git).  This app follows [SemVer](http://semver.org/) in its versioning, so make sure to read the release notes when deploying a major version change.
 
-Note: Deployed versions prior to 4/9/2018 using Mailgun will need to verify constants: MAILGUN_DOMAIN and MAILGUN_EMAIL. 
+Note: Deployed versions prior to 4/9/2018 using Mailgun will need to verify constants: MAILGUN_DOMAIN and MAILGUN_EMAIL.
+Note: Deployed versions prior to 4/28/2018 (< 3.0.0) on Heroku will need to install the buildpack https://github.com/jontewks/puppeteer-heroku-buildpack
 
 
 ## Screenshots
@@ -63,6 +64,14 @@ Note: Deployed versions prior to 4/9/2018 using Mailgun will need to verify cons
     <img src="./screenshots/sms.png" height="400" />
   </a>
 </kbd>
+
+## Version history
+3.0.0 - Refactor to support updated Southwest site redesign, replace osmosis with puppeteer
+2.1.0 - Add support for checking for the cheapest flight on a day
+2.0.1 - Integrate upstream changes from PetroccoCo (email handling) and pmschartz (redesign)
+2.0.0 - Support Mailgun and Plivo (email and sms) 
+1.9.5 - Support Mailgun
+< 1.9.5 - Prior work
 
 ## Attribution
 
