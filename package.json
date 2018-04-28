@@ -47,11 +47,11 @@
     "redis": "^2.8.0",
     "redis-server": "^1.1.0",
     "shortid": "^2.2.8",
-    "victory": "^0.20.0"
+    "victory": "^0.20.0",
+    "tape": "^4.8.0"
   },
   "devDependencies": {
     "nodemon": "1.11.0",
-    "semistandard": "11.0.0",
-    "tape": "4.8.0"
+    "semistandard": "11.0.0"
   }
 }
