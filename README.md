@@ -67,6 +67,8 @@ Note: Deployed versions prior to 4/28/2018 (< 3.0.0) on Heroku will need to inst
 </kbd>
 
 ## Version history
+### [3.0.1] - 2018-4-28
+  - Avoid multiple browser instances during task:check - reduce memory usage
 ### [3.0.0] - 2018-4-28
   - Refactor to support updated Southwest site redesign, replace osmosis with puppeteer
 ### [2.1.0] - 2018-4-14
