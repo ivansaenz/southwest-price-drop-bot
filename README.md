@@ -1,3 +1,6 @@
+# ALERT!
+## It seems SW got smart and is blocking the Heroku IPs from accessing their site. I'm trying to find a workaround, but it's tough. Local deployments should work fine, as should other cloud providers (Azure, AWS, Digital Ocean, etc).
+
 # Southwest Price Drop Bot
 
 
