@@ -50,7 +50,7 @@
     "shortid": "^2.2.14",
     "tape": "^4.9.1",
     "victory": "^31.0.2",
-    "yarn": "^1.12.3"
+    "yarn": "^1.22.0"
   },
   "devDependencies": {
     "nodemon": "1.18.9",
