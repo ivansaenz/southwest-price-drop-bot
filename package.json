@@ -35,7 +35,7 @@
     "google-libphonenumber": "^3.2.1",
     "load-json-file": "^5.1.0",
     "lodash.clonedeep": "^4.5.0",
-    "lodash.merge": "^4.6.1",
+    "lodash.merge": "^4.6.2",
     "mailgun-js": "^0.22.0",
     "npm": "^6.5.0",
     "package.json": "^2.0.1",
