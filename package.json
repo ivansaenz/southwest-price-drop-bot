@@ -31,7 +31,7 @@
     "cors": "^2.8.5",
     "dateformat": "^3.0.3",
     "dotenv": "^6.2.0",
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "google-libphonenumber": "^3.2.1",
     "load-json-file": "^5.1.0",
     "lodash.clonedeep": "^4.5.0",
